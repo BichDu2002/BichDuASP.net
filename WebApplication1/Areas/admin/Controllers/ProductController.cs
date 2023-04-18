@@ -83,17 +83,17 @@ namespace WebApplication1.Areas.admin.Controllers
                     return RedirectToAction("Index");
                 }
             }
-                    
+
             return View(objProduct);
         }
-    
-    
+
+
         [HttpGet]
-        public ActionResult Details(int id) 
-        { 
-        var objProduct = dbObj.Products.Where(n=>n.id==id).FirstOrDefault();
+        public ActionResult Details(int id)
+        {
+            var objProduct = dbObj.Products.Where(n => n.id == id).FirstOrDefault();
             return View(objProduct);
-            
+
         }
         [HttpGet]
         public ActionResult Delete(int id)
@@ -105,7 +105,7 @@ namespace WebApplication1.Areas.admin.Controllers
         [HttpPost]
         public ActionResult Delete(Product objPro)
         {
-            
+
             var objProduct = dbObj.Products.Where(n => n.id == objPro.id).FirstOrDefault();
             dbObj.Products.Remove(objProduct);
             dbObj.SaveChanges();
@@ -114,16 +114,17 @@ namespace WebApplication1.Areas.admin.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-
-            var objProduct = dbObj.Products.Where(n => n.id ==id).FirstOrDefault();
+            this.LoadData();
+            var objProduct = dbObj.Products.Where(n => n.id == id).FirstOrDefault();
 
             return View(objProduct);
         }
-
+        [ValidateInput(false)]
         [HttpPost]
-        public ActionResult Edit(int id,Product objProduct)
+        public ActionResult Edit(int id, Product objProduct)
         {
-            if(ModelState.IsValid)
+            this.LoadData();
+            if (ModelState.IsValid)
             {
                 if (objProduct.ImageUpload != null)
                 {
@@ -179,5 +180,6 @@ namespace WebApplication1.Areas.admin.Controllers
 
             ViewBag.ProductType = objCommon.ToSelectList(dtProductType, "id", "Name");
         }
+    
     }
 }

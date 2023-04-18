@@ -12,9 +12,9 @@
         <div class="card mb-3">
             <div class="card-body">
                 <ol class="breadcrumb float-left">
-                    <li class="breadcrumb-item"><a href="~/Home/Index">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Category name</a></li>
-                    <li class="breadcrumb-item active">Item details</li>
+                    <li class="breadcrumb-item"><a href="~/Home/Index">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="#">Loại mua</a></li>
+                    <li class="breadcrumb-item active">Chi tiết thú cưng</li>
                 </ol>
             </div> <!-- card-body .// -->
         </div> <!-- card.// -->
@@ -26,61 +26,68 @@
 
                 <article class="filter-group">
                     <h6 class="title">
-                        <a href="#" class="dropdown-toggle" data-toggle="collapse" data-target="#collapse_1">	 Product type </a>
+                        <a href="#" class="dropdown-toggle" data-toggle="collapse" data-target="#collapse_1">Loại sản phẩm </a>
                     </h6>
                     <div class="filter-content collapse show" id="collapse_1" style="">
                         <div class="inner">
                             <ul class="list-menu">
-                                <li><a href="#">Shorts  </a></li>
-                                <li><a href="#">Trousers </a></li>
-                                <li><a href="#">Sweaters  </a></li>
-                                <li><a href="#">Clothes  </a></li>
-                                <li><a href="#">Home items </a></li>
-                                <li><a href="#">Jackats</a></li>
-                                <li><a href="#">Somethings </a></li>
+                                <li><a href="~/Catagory/ProductCatagory/32">Mèo lông dài</a></li>
+                                <li><a href="~/Catagory/ProductCatagory/33"> Mèo lông ngắn </a></li>
+                                <li><a href="~/Catagory/ProductCatagory/37">Mèo Munchkin</a></li>
+                                <li><a href="~/Catagory/ProductCatagory/23">Chó Alaska</a></li>
+                                <li><a href="~/Catagory/ProductCatagory/36">Chó Samoyed </a></li>
+                                <li><a href="~/Catagory/ProductCatagory/24">Chó Corgi</a></li>
+                                <li><a href="~/Catagory/ProductCatagory/41">Thức ăn </a></li>
+                                <li><a href="~/Catagory/ProductCatagory/40">Trang phục</a></li>
+                                <li><a href="~/Catagory/ProductCatagory/38">Phụ kiện</a></li>
+
+
+                                <li><a href="~/Catagory/ProductCatagory/">Khác.....</a></li>
                             </ul>
                         </div> <!-- inner.// -->
                     </div>
                 </article> <!-- filter-group  .// -->
                 <article class="filter-group">
                     <h6 class="title">
-                        <a href="#" class="dropdown-toggle" data-toggle="collapse" data-target="#collapse_2"> Brands </a>
+                        <a href="#" class="dropdown-toggle" data-toggle="collapse" data-target="#collapse_2"> Thương hiệu </a>
                     </h6>
                     <div class="filter-content collapse show" id="collapse_2">
                         <div class="inner">
                             <label class="custom-control custom-checkbox">
                                 <input type="checkbox" checked="" class="custom-control-input">
                                 <div class="custom-control-label">
-                                    Adidas
-                                    <b class="badge badge-pill badge-light float-right">120</b>
+                                    Mèo lông dài(Anh)
+                                    <b class="badge badge-pill badge-light float-right">50000</b>
+
+                                </div>
+                                
+                            </label>
+                            <label class="custom-control custom-checkbox">
+                                <input type="checkbox" checked="" class="custom-control-input">
+                                <div class="custom-control-label">
+                                  Mèo lông ngắn
+                                    <b class="badge badge-pill badge-light float-right">400000</b>
                                 </div>
                             </label>
                             <label class="custom-control custom-checkbox">
                                 <input type="checkbox" checked="" class="custom-control-input">
                                 <div class="custom-control-label">
-                                    Nike
-                                    <b class="badge badge-pill badge-light float-right">15</b>
+                                    Mèo Munchkin
+                                    <b class="badge badge-pill badge-light float-right">35000</b>
                                 </div>
                             </label>
                             <label class="custom-control custom-checkbox">
                                 <input type="checkbox" checked="" class="custom-control-input">
                                 <div class="custom-control-label">
-                                    The Noth Face
-                                    <b class="badge badge-pill badge-light float-right">35</b>
-                                </div>
-                            </label>
-                            <label class="custom-control custom-checkbox">
-                                <input type="checkbox" checked="" class="custom-control-input">
-                                <div class="custom-control-label">
-                                    The cat
-                                    <b class="badge badge-pill badge-light float-right">89</b>
+                                  Chó Alaska
+                                    <b class="badge badge-pill badge-light float-right">890000</b>
                                 </div>
                             </label>
                             <label class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input">
                                 <div class="custom-control-label">
-                                    Honda
-                                    <b class="badge badge-pill badge-light float-right">30</b>
+                                 Chó Samoyed
+                                    <b class="badge badge-pill badge-light float-right">300000</b>
                                 </div>
                             </label>
                         </div> <!-- inner.// -->
@@ -88,77 +95,74 @@
                 </article> <!-- filter-group .// -->
                 <article class="filter-group">
                     <h6 class="title">
-                        <a href="#" class="dropdown-toggle" data-toggle="collapse" data-target="#collapse_3"> Price range </a>
+                        <a href="#" class="dropdown-toggle" data-toggle="collapse" data-target="#collapse_3">Giá </a>
                     </h6>
                     <div class="filter-content collapse show" id="collapse_3">
                         <div class="inner">
                             <input type="range" class="custom-range" min="0" max="100" name="">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label>Min</label>
+                                    <label>Thấp</label>
                                     <input class="form-control" placeholder="$0" type="number">
                                 </div>
                                 <div class="form-group text-right col-md-6">
-                                    <label>Max</label>
+                                    <label>Cao</label>
                                     <input class="form-control" placeholder="$1,0000" type="number">
                                 </div>
                             </div> <!-- form-row.// -->
-                            <button class="btn btn-block btn-primary">Apply</button>
+                            <button class="btn btn-block btn-primary">Áp dụng</button>
                         </div> <!-- inner.// -->
                     </div>
                 </article> <!-- filter-group .// -->
                 <article class="filter-group">
                     <h6 class="title">
-                        <a href="#" class="dropdown-toggle" data-toggle="collapse" data-target="#collapse_4"> Sizes </a>
+                        <a href="#" class="dropdown-toggle" data-toggle="collapse" data-target="#collapse_4"> Kích cỡ </a>
                     </h6>
                     <div class="filter-content collapse show" id="collapse_4">
                         <div class="inner">
                             <label class="checkbox-btn">
                                 <input type="checkbox">
-                                <span class="btn btn-light"> XS </span>
+                                <span class="btn btn-light"> Nhỏ </span>
                             </label>
 
                             <label class="checkbox-btn">
                                 <input type="checkbox">
-                                <span class="btn btn-light"> SM </span>
+                                <span class="btn btn-light"> Vừa</span>
                             </label>
 
                             <label class="checkbox-btn">
                                 <input type="checkbox">
-                                <span class="btn btn-light"> LG </span>
+                                <span class="btn btn-light"> To </span>
                             </label>
 
-                            <label class="checkbox-btn">
-                                <input type="checkbox">
-                                <span class="btn btn-light"> XXL </span>
-                            </label>
+                          
                         </div> <!-- inner.// -->
                     </div>
                 </article> <!-- filter-group .// -->
                 <article class="filter-group">
                     <h6 class="title">
-                        <a href="#" class="dropdown-toggle" data-toggle="collapse" data-target="#collapse_5"> Condition </a>
+                        <a href="#" class="dropdown-toggle" data-toggle="collapse" data-target="#collapse_5"> Điều kiện </a>
                     </h6>
                     <div class="filter-content collapse show" id="collapse_5">
                         <div class="inner">
                             <label class="custom-control custom-radio">
                                 <input type="radio" name="myfilter_radio" checked="" class="custom-control-input">
-                                <div class="custom-control-label">Any condition</div>
+                                <div class="custom-control-label">Được kiểm tra khi nhận hàng</div>
                             </label>
 
                             <label class="custom-control custom-radio">
                                 <input type="radio" name="myfilter_radio" class="custom-control-input">
-                                <div class="custom-control-label">Brand new </div>
+                                <div class="custom-control-label">Được đổi tra khi không đúng mẫu</div>
                             </label>
 
                             <label class="custom-control custom-radio">
                                 <input type="radio" name="myfilter_radio" class="custom-control-input">
-                                <div class="custom-control-label">Used items</div>
+                                <div class="custom-control-label">Nhận xét, đánh giá</div>
                             </label>
 
                             <label class="custom-control custom-radio">
                                 <input type="radio" name="myfilter_radio" class="custom-control-input">
-                                <div class="custom-control-label">Very old</div>
+                                <div class="custom-control-label">Khác...</div>
                             </label>
                         </div> <!-- inner.// -->
                     </div>
@@ -170,12 +174,12 @@
 
                 <header class="mb-3">
                     <div class="form-inline">
-                        <strong class="mr-md-auto">32 Items found </strong>
+                        <strong class="mr-md-auto">NHỮNG TIN MỚI NHẤT </strong>
                         <select class="mr-2 form-control">
-                            <option>Latest items</option>
-                            <option>Trending</option>
-                            <option>Most Popular</option>
-                            <option>Cheapest</option>
+                            <option>Mục mới nhất</option>
+                            <option>Xu hướng</option>
+                            <option>Phổ biến</option>
+                            <option>Giảm giá</option>
                         </select>
                         <div class="btn-group">
                             <a href="page-listing-grid.html" class="btn btn-light" data-toggle="tooltip" title="List view">
@@ -192,14 +196,14 @@
                     <article class="card card-product-list">
                         <div class="row no-gutters">
                             <aside class="col-md-3">
-                                <a href="#" class="img-wrap">
-                                    <span class="badge badge-danger"> NEW </span>
+                                <a href="@Url.Action("Detail", "Product", new {Id=item.id})" class="img-wrap">
+                                    <span class="badge badge-danger">Mới</span>
                                     <img src="~/Content/images/items/@item.Avatar">
                                 </a>
                             </aside> <!-- col.// -->
                             <div class="col-md-6">
                                 <div class="info-main">
-                                    <a href="#" class="h5 title">@item.Name</a>
+                                    <a href="@Url.Action("Detail", "Product", new {Id=item.id})" class="h5 title">@item.Name</a>
                                     <div class="rating-wrap mb-2">
                                         <ul class="rating-stars">
                                             <li style="width:100%" class="stars-active">
@@ -217,15 +221,16 @@
                                     </div> <!-- rating-wrap.// -->
 
                                     <p class="mb-3">
-                                        <span class="tag"> <i class="fa fa-check"></i> Verified</span>
-                                        <span class="tag"> 5 Years </span>
-                                        <span class="tag"> 80 reviews </span>
-                                        <span class="tag"> Russia </span>
+                                        <span class="tag"> <i class="fa fa-check"></i>Nhận xét</span>
+                                        <span class="tag"> 5 sao </span>
+                                        <span class="tag"> 1569.000 lượt đánh giá</span>
+                                        <span class="tag"> Phê bình </span>
                                     </p>
                                 @item.ShortDes
                                     <p>
-                                        Take it as demo specs, ipsum dolor sit amet, consectetuer adipiscing elit, Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Ut wisi enim ad minim  sint occaecat cupidatat non
-                                        proident, sunt in culpa qui laborum....
+                                      Những hình ảnh,video được người mua nhận hàng nhận xét một cách đúng và chính xác nhất.
+                                      Qua những bình luận của khách giúp của hàng dễ dàng mua bán và giúp người khác khi mua hàng
+                                        sẽ cảm thấy tin tưởng về chất lượng bên cửa hàng.
                                     </p>
 
                                 </div> <!-- info-main.// -->
@@ -234,20 +239,20 @@
                                 <div class="info-aside">
                                     <div class="price-wrap">
                                         <span class="h5 price">@item.Price</span>
-                                        <small class="text-muted">/per item</small>
+                                        <small class="text-muted">Giá mỗi loại</small>
                                     </div> <!-- price-wrap.// -->
-                                    <small class="text-warning">Paid shipping</small>
+                                    <small class="text-warning">Phí vận chuyển trả phí</small>
 
-                                    <p class="text-muted mt-3">Grand textile Co</p>
+                                    <p class="text-muted mt-3">Áp dụng chương trình khuyến mãi</p>
                                     <p class="mt-3">
-                                        <a href="#" class="btn btn-outline-primary"> <i class="fa fa-envelope"></i> Contact supplier </a>
-                                        <a href="#" class="btn btn-light"><i class="fa fa-heart"></i> Save </a>
+                                        <a href="#" class="btn btn-outline-primary"> <i class="fa fa-envelope"></i> Liên hệ với cửa hàng </a>
+                                        <a href="#" class="btn btn-light"><i class="fa fa-heart"></i> Lưu thông tin </a>
                                     </p>
 
                                     <label class="custom-control mt-3 custom-checkbox">
                                         <input type="checkbox" class="custom-control-input">
                                         <div class="custom-control-label">
-                                            Add to compare
+                                           Thêm vào giỏ hàng
                                         </div>
                                     </label>
 
@@ -263,21 +268,21 @@
 
                 <nav class="mb-4" aria-label="Page navigation sample">
                     <ul class="pagination">
-                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item disabled"><a class="page-link" href="#">Trước</a></li>
                         <li class="page-item active"><a class="page-link" href="#">1</a></li>
                         <li class="page-item"><a class="page-link" href="#">2</a></li>
                         <li class="page-item"><a class="page-link" href="#">3</a></li>
                         <li class="page-item"><a class="page-link" href="#">4</a></li>
                         <li class="page-item"><a class="page-link" href="#">5</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Qua</a></li>
                     </ul>
                 </nav>
 
 
                 <div class="box text-center">
-                    <p>Did you find what you were looking for？</p>
-                    <a href="" class="btn btn-light">Yes</a>
-                    <a href="" class="btn btn-light">No</a>
+                    <p>Bạn đã tìm thấy những gì bạn cần chưa</p>
+                    <a href="" class="btn btn-light">Chưa</a>
+                    <a href="" class="btn btn-light">Có</a>
                 </div>
 
 

@@ -20,5 +20,6 @@ namespace WebApplication1.Context
         public Nullable<double> Price { get; set; }
         public Nullable<int> Status { get; set; }
         public Nullable<System.DateTime> CreatedOnUct { get; set; }
+        public Nullable<int> Userld { get; set; }
     }
 }

@@ -1,0 +1,122 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<WebApplication1.Context.Brand>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+
+    /* Set the style for the a tag */
+    .pagination a {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color .3s;
+        border: 1px solid #29c9d4;
+    }
+        /* set the style for the active class */
+        .pagination a.active {
+            background-color: dodgerblu;
+            color: white;
+            display: inline-block;
+            width: 40px;
+            height: 48px;
+            border: 1px solid #ffb600;
+        }
+        /* add background color when user hovers on inactive class */
+        .pagination a:hover:not(.active) {
+            background-color: #4cff00;
+            display: inline-block;
+            width: 40px;
+            height: 48px;
+            border: 1px solid #00ffff;
+        }
+</style>
+
+<div class="content-wrapper">
+    <h2>Quản lý thương hiệu</h2>
+
+    <p>
+        @Html.ActionLink("Tạo mới", "Create")
+    </p>
+
+    @using (Html.BeginForm("Index", "Brand", FormMethod.Get))
+    {
+        <p>
+            Tìm thương hiệu:&nbsp @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @placeholder = "Nhập tên thương hiệu" })
+            <input type="submit" class="btn btn-sm btn-outline-primary " value="Tìm kiếm" />
+        </p>
+
+    }
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Avatar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Slug)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().ShowOnHomePage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().DiscplayOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().CreatedOnUct)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().UpdatedOnUct)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Deleted)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <img src="~/Content/images/items/@Html.DisplayFor(modelItem => item.Avatar)" style="width:100px;height:100px" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Slug)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShowOnHomePage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiscplayOrder)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedOnUct)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UpdatedOnUct)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Deleted)
+                </td>
+                <td>
+                    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Chi tiết", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    Trang @(Model.PageCount <Model.PageNumber ?0 :Model.PageNumber)/@Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, currentFilter = ViewBag.CurrentFilter }))
+</div>

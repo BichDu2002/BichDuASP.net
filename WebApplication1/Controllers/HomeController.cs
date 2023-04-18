@@ -114,8 +114,20 @@ namespace WebApplication1.Controllers
         public ActionResult Logout()
         {
             Session.Clear();//remove session
-            return RedirectToAction("Login");
+            return RedirectToAction("Home");
         }
+
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Trang liên hệ";
+            return View();
+        }
+        public ActionResult Seach(String seach,int id=0)
+        {
+            return View();
+
+        }
+
     }
 }
 

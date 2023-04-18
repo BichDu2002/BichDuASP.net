@@ -27,12 +27,12 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Avatar, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            <input type="file"  name="ImageUpload" />
+            <input type="file"  name="ImageUpload" required />
         </div>
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Avatar, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.Categoryld, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.DropDownListFor(model => model.Categoryld, ViewBag.ListCategory as SelectList, new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.Categoryld, "", new { @class = "text-danger" })

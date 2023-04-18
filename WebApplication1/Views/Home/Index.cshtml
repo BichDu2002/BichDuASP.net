@@ -11,7 +11,20 @@
 
                 <div class="row">
                     <aside class="col-lg col-md-3 flex-lg-grow-0">
-                        <h6>TẤT CẢ SẢN PHẨM </h6>
+                    
+                        <font color="green">
+
+                            <a>SẢN PHẨM</a>
+
+                            <h1 style="background-color: #92a8d1">
+
+
+
+                            </h1>
+
+                        </font>
+                          
+                     
                         <nav class="nav-home-aside">
                             <ul class="menu-category">
                                 @foreach (var item in Model.ListCategory)
@@ -56,7 +69,12 @@
                     </div> <!-- col.// -->
                     <div class="col-md d-none d-lg-block flex-grow-1">
                         <aside class="special-home-right">
-                            <h6 class="bg-blue text-center text-white mb-0 p-2">SẢN PHẨM PHỔ BIẾN</h6>
+                            <h6 class="bg-blue text-center text-white mb-0 p-2">
+                                <h7 style="background-color: #4dbade">
+
+                                    SẢN PHẨM PHỔ BIẾN
+                                    </h7>
+                            </h6>
 
 
                             @foreach (var item in Model.ListCategory.Where(n => n.ShowOnHomePage == true).Take(4))
@@ -65,7 +83,7 @@
                                 <div class="card-banner border-bottom">
                                     <div class="py-3" style="width:40%">
                                         <h6 class="card-title">@item.Name</h6>
-                                        <a href="#" class="btn btn-secondary btn-sm"></a>
+                                        <a href="@Url.Action("ProductCatagory", "Catagory", new { Id = item.id }, null)" class="btn btn-secondary btn-sm"> Tới ngay </a>
                                     </div>
                                     <img src="~/Content/images/items/@item.Avatar" height="80" class="img-bg">
                                 </div>
@@ -90,10 +108,10 @@
                     <p>HOẠT ĐỘNG CÙNG THÚ CƯNG</p>
                 </header><!-- sect-heading -->
                 <div class="timer">
-                    <div> <span class="num">17</span> <small>Days</small></div>
-                    <div> <span class="num">7</span> <small>Hours</small></div>
-                    <div> <span class="num">27</span> <small>Min</small></div>
-                    <div> <span class="num">07</span> <small>Sec</small></div>
+                    <div> <span class="num">17</span> <small>NGÀY</small></div>
+                    <div> <span class="num">7</span> <small>GIỜ</small></div>
+                    <div> <span class="num">27</span> <small>GIÂY</small></div>
+                    <div> <span class="num">07</span> <small>SEC</small></div>
                 </div>
             </div> <!-- col.// -->
             <div class="row no-gutters items-wrap">
@@ -122,7 +140,14 @@
     <!-- =============== SECTION 1 =============== -->
     <section class="padding-bottom">
         <header class="section-heading heading-line">
-            <h4 class="title-section text-uppercase">MÈO LÔNG DÀI</h4>
+            <h4 class="title-section text-uppercase">
+                
+                <h7 style="background-color: #e239e2">
+                    MÈO LÔNG DÀI
+                </h7>
+
+
+            </h4>
         </header>
 
         <div class="card card-home-category">
@@ -132,6 +157,8 @@
                     <div class="home-category-banner bg-light-orange">
                         <h5 class="title">Chi tiết mèo </h5>
                         <p>
+
+                            
                             Chiều cao: từ 30,5cm đến 36cm.
                             Cân nặng: Trung bình từ 3,6kg đến 4,5kg.
                             Đặc biệt: Lông mèo rất dài và dựng thẳng rất mềm ượt và mướt tay.
@@ -164,7 +191,13 @@
     <!-- =============== SECTION 1 =============== -->
     <section class="padding-bottom">
         <header class="section-heading heading-line">
-            <h4 class="title-section text-uppercase">MÈO LÔNG NGẮN</h4>
+            <h4 class="title-section text-uppercase">
+              
+
+                <h7 style="background-color: #e9ae0b">
+                    MÈO LÔNG NGẮN
+                </h7>
+            </h4>
         </header>
 
         <div class="card card-home-category">
@@ -206,7 +239,11 @@
     <!-- =============== SECTION 1 =============== -->
     <section class="padding-bottom">
         <header class="section-heading heading-line">
-            <h4 class="title-section text-uppercase">MÈO MUNCHKIN</h4>
+            <h4 class="title-section text-uppercase">
+                <h7 style="background-color: #f54b13">
+                    MÈO MUNCHKIN
+                </h7>
+            </h4>
         </header>
         <div class="card card-home-category">
             <div class="row no-gutters">
@@ -245,7 +282,13 @@
     <!-- =============== SECTION 2 =============== -->
     <section class="padding-bottom">
         <header class="section-heading heading-line">
-            <h4 class="title-section text-uppercase">CHÓ ALASKA </h4>
+            <h4 class="title-section text-uppercase">
+                <h7 style="background-color: #ffd800">
+                   CHÓ ALASKA
+                </h7>
+                
+          
+            </h4>
         </header>
         <div class="card card-home-category">
             <div class="row no-gutters">
@@ -287,7 +330,14 @@
     <!-- =============== SECTION 2 =============== -->
     <section class="padding-bottom">
         <header class="section-heading heading-line">
-            <h4 class="title-section text-uppercase">CHÓ CORGI </h4>
+            <h4 class="title-section text-uppercase">
+                
+
+
+                <h7 style="background-color: #f54b13">
+                    CHÓ CHORGI
+                </h7>
+            </h4>
         </header>
         <div class="card card-home-category">
             <div class="row no-gutters">
@@ -327,7 +377,14 @@
     <!-- =============== SECTION 2 =============== -->
     <section class="padding-bottom">
         <header class="section-heading heading-line">
-            <h4 class="title-section text-uppercase">CHÓ CHOW CHOW </h4>
+            <h4 class="title-section text-uppercase">
+                <h7 style="background-color: #42f9d4">
+                    CHÓ CHOW CHOW
+                </h7>
+               
+
+
+            </h4>
         </header>
 
         <div class="card card-home-category">
@@ -370,7 +427,15 @@
     <!-- =============== SECTION 2 =============== -->
     <section class="padding-bottom">
         <header class="section-heading heading-line">
-            <h4 class="title-section text-uppercase">CHÓ SAMOYED </h4>
+            <h4 class="title-section text-uppercase">
+
+
+              
+
+                <h7 style="background-color:#4fe818">
+                    CHÓ SAMOYED
+                </h7>
+            </h4>
         </header>
         <div class="card card-home-category">
             <div class="row no-gutters">
@@ -409,7 +474,13 @@
     <!-- =============== SECTION 3 =============== -->
     <section class="padding-bottom">
         <header class="section-heading heading-line">
-            <h4 class="title-section text-uppercase">THỨC ĂN</h4>
+            <h4 class="title-section text-uppercase">
+                <h7 style="background-color: #5c3fef">
+                    THỨC ĂN
+                </h7>
+             
+
+            </h4>
         </header>
         <div class="card card-home-category">
             <div class="row no-gutters">
@@ -450,7 +521,12 @@
     <!-- =============== SECTION 3 =============== -->
     <section class="padding-bottom">
         <header class="section-heading heading-line">
-            <h4 class="title-section text-uppercase">PHỤ KIỆN</h4>
+            <h4 class="title-section text-uppercase">
+                <h7 style="background-color: #cae225">
+                    PHỤ KIỆN
+                </h7>
+
+            </h4>
         </header>
         <div class="card card-home-category">
             <div class="row no-gutters">
@@ -492,7 +568,12 @@
     <section class="padding-bottom">
 
         <header class="section-heading heading-line">
-            <h4 class="title-section text-uppercase">ĐÁP ỨNG NHU CẦU</h4>
+            <h4 class="title-section text-uppercase">
+                <h7 style="background-color: #e264ed">
+                   TƯ VẤN KHÁCH HÀNG
+                </h7>
+               
+            </h4>
         </header>
 
         <div class="row">
@@ -517,7 +598,7 @@
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                                <input class="form-control" placeholder="Quantity" name="" type="text">
+                                <input class="form-control" placeholder="Số lượng" name="" type="text">
 
                                 <select class="custom-select form-control">
                                     <option>Mua</option>
@@ -528,18 +609,18 @@
                             </div>
                         </div>
                         <div class="form-group text-muted">
-                            <p>Select template type:</p>
+                            <p>Đánh giá:</p>
                             <label class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" value="option1">
-                                <div class="form-check-label">Giá</div>
+                                <div class="form-check-label">Thật tốt</div>
                             </label>
                             <label class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" value="option2">
-                                <div class="form-check-label">Giá</div>
+                                <div class="form-check-label">Tệ</div>
                             </label>
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-warning">Request for quote</button>
+                            <button class="btn btn-warning">Liên hệ</button>
                         </div>
                     </form>
                 </div>
@@ -553,7 +634,12 @@
     <section class="padding-bottom-sm">
 
         <header class="section-heading heading-line">
-            <h4 class="title-section text-uppercase">SẢN PHẨM ĐỀ XUẤT</h4>
+            <h4 class="title-section text-uppercase">
+                <h7 style="background-color: #e82d18">
+                    SẢN PHẨM ĐỀ XUẤT
+                </h7>
+               
+            </h4>
         </header>
 
 
@@ -581,14 +667,14 @@
     <section class="padding-bottom">
 
         <header class="section-heading heading-line">
-            <h4 class="title-section text-uppercase">Choose region</h4>
+            <h4 class="title-section text-uppercase">Chọn khu vực</h4>
         </header>
 
         <ul class="row mt-4">
-            <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/GB.png"> <span>England</span> </a></li>
-            <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/TR.png"> <span>Turkey</span> </a></li>
-            <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/UZ.png"> <span>Uzbekistan</span> </a></li>
-            <li class="col-md col-6"><a href="#" class="icontext"> <i class="mr-3 fa fa-ellipsis-h"></i> <span>More regions</span> </a></li>
+            <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/GB.png"> <span>TOKYO</span> </a></li>
+            <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/TR.png"> <span>VIỆT NAM</span> </a></li>
+            <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/UZ.png"> <span>THÁI LANS</span> </a></li>
+            <li class="col-md col-6"><a href="#" class="icontext"> <i class="mr-3 fa fa-ellipsis-h"></i> <span>Chọn nhiều khu vực hơn</span> </a></li>
         </ul>
     </section>
     <!-- =============== SECTION REGION .//END =============== -->
@@ -602,16 +688,16 @@
 <section class="section-subscribe padding-y-lg">
     <div class="container">
 
-        <p class="pb-2 text-center text-white">Delivering the latest product trends and industry news straight to your inbox</p>
+        <p class="pb-2 text-center text-white">Cung cấp tin tức và dịch vụ mới nhất</p>
 
         <div class="row justify-content-md-center">
             <div class="col-lg-5 col-md-6">
                 <form class="form-row">
                     <div class="col-md-8 col-7">
-                        <input class="form-control border-0" placeholder="Your Email" type="email">
+                        <input class="form-control border-0" placeholder="Gmail" type="email">
                     </div> <!-- col.// -->
                     <div class="col-md-4 col-5">
-                        <button type="submit" class="btn btn-block btn-warning"> <i class="fa fa-envelope"></i> Subscribe </button>
+                        <button type="submit" class="btn btn-block btn-warning"> <i class="fa fa-envelope"></i> Đăng ký </button>
                     </div> <!-- col.// -->
                 </form>
                 <small class="form-text text-white-50">We’ll never share your email address with a third-party. </small>

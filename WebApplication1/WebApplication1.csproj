@@ -137,7 +137,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
     <Compile Include="Areas\admin\Controllers\BaseController.cs" />
+    <Compile Include="Areas\admin\Controllers\BrandController.cs" />
     <Compile Include="Areas\admin\Controllers\CartController.cs" />
+    <Compile Include="Areas\admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\admin\duController.cs" />
@@ -163,12 +165,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Context\dbModel1.cs">
-      <DependentUpon>dbModel1.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Include="Context\Order.cs">
+      <DependentUpon>dbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrderDetail.cs">
       <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Context\Product.cs">
@@ -182,10 +182,12 @@
     <Compile Include="Controllers\CatagoryController.cs" />
     <Compile Include="Controllers\CompomentController.cs" />
     <Compile Include="Controllers\ControlController.cs" />
+    <Compile Include="Controllers\dmspController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListingController.cs" />
     <Compile Include="Controllers\listingngangController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\PlandController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
@@ -193,10 +195,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="ListtoDataTableConverterBase.cs" />
+    <Compile Include="Models\BrandMasterData.cs" />
     <Compile Include="Models\CartModel.cs" />
+    <Compile Include="Models\CategoryMasterData.cs" />
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\PartiaMetadataType.cs" />
     <Compile Include="Models\ProductMasterData.cs" />
+    <Compile Include="Models\Seach.cs" />
     <Compile Include="Models\UserMasterData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -2449,16 +2454,24 @@
     <Content Include="Content\images\Category\alaska2.jpg" />
     <Content Include="Content\images\Category\alaska3.jpg" />
     <Content Include="Content\images\Category\alaska4.jpg" />
+    <Content Include="Content\images\Category\chow10.jpg" />
     <Content Include="Content\images\Category\corgi1.jfif" />
+    <Content Include="Content\images\Category\corgi11.jpg" />
     <Content Include="Content\images\Category\corgi2.jpg" />
+    <Content Include="Content\images\Category\do7.jpg" />
     <Content Include="Content\images\Category\longdai02.jpg" />
     <Content Include="Content\images\Category\longdai03.jfif" />
     <Content Include="Content\images\Category\longdai04.jpg" />
     <Content Include="Content\images\Category\longdai1.jpg" />
+    <Content Include="Content\images\Category\longdai12.jpg" />
     <Content Include="Content\images\Category\longngan1.jpg" />
     <Content Include="Content\images\Category\longngan2.jpg" />
     <Content Include="Content\images\Category\longngan3.jpg" />
     <Content Include="Content\images\Category\longngan4.jpg" />
+    <Content Include="Content\images\Category\mu1.jpg" />
+    <Content Include="Content\images\Category\munchkin01.jpg" />
+    <Content Include="Content\images\Category\phukien.jpg" />
+    <Content Include="Content\images\Category\samoyed7.jpg" />
     <Content Include="Content\images\Category\thucan02.jpg" />
     <Content Include="Content\images\Category\thucan03.jpeg" />
     <Content Include="Content\images\Category\thucan1.jpg" />
@@ -2646,11 +2659,13 @@
     <Content Include="Content\images\items\vong05.jpg" />
     <Content Include="Content\images\items\vong4.jpg" />
     <Content Include="Content\images\logo-white.png" />
+    <Content Include="Content\images\LOGO.jfif" />
     <Content Include="Content\images\logo.jpg" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\logo02.jpg" />
     <Content Include="Content\images\logo1.jpg" />
     <Content Include="Content\images\logo5.png" />
+    <Content Include="Content\images\logoo.png" />
     <Content Include="Content\images\misc\appstore.png" />
     <Content Include="Content\images\misc\payments.png" />
     <Content Include="Content\images\misc\playmarket.png" />
@@ -2672,10 +2687,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>dbModel.edmx</DependentUpon>
       <LastGenOutput>dbModel.cs</LastGenOutput>
-    </Content>
-    <Content Include="Context\dbModel1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>dbModel1.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -2799,13 +2810,6 @@
     <Content Include="Areas\admin\Views\Product\Edit.cshtml" />
     <Content Include="Areas\admin\Views\Product\Create.cshtml" />
     <Content Include="libman.json" />
-    <EntityDeploy Include="Context\dbModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>dbModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Context\dbModel.edmx.diagram">
-      <DependentUpon>dbModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Content\ckeditor\bender-runner.config.json" />
     <Content Include="Content\ckeditor\CHANGES.md" />
     <Content Include="Content\ckeditor\LICENSE.md" />
@@ -2822,6 +2826,23 @@
     <Content Include="Content\ckeditor\skins\moono-lisa\readme.md" />
     <Content Include="Content\images\posts - Copy\.DS_Store" />
     <Content Include="Areas\admin\Views\Cart\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Brand\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Brand\Details.cshtml" />
+    <Content Include="Areas\admin\Views\Brand\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\Brand\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\Brand\Create.cshtml" />
+    <EntityDeploy Include="Context\dbModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>dbModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Context\dbModel.edmx.diagram">
+      <DependentUpon>dbModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\admin\Views\Category\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Category\Details.cshtml" />
+    <Content Include="Areas\admin\Views\Category\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\Category\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\Category\Create.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2851,20 +2872,21 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Product\Detail.cshtml" />
-    <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Catagory\Catagory.cshtml" />
     <Content Include="Views\Register\Register.cshtml" />
     <Content Include="Views\All\All.cshtml" />
     <Content Include="Views\Cart\Cart.cshtml" />
     <Content Include="Views\Control\Controler.cshtml" />
-    <Content Include="Views\Listing\Listing.cshtml" />
-    <Content Include="Views\listingngang\listingngang.cshtml" />
     <Content Include="Views\Pland\Pland.cshtml" />
     <Content Include="Views\Compoment\Compoment.cshtml" />
     <Content Include="Views\Home\Home.cshtml" />
     <Content Include="Views\Catagory\ProductCatagory.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Payment\Index.cshtml" />
+    <Content Include="Views\Home\Seach.cshtml" />
+    <Content Include="Views\dmsp\Index.cshtml" />
+    <Content Include="Views\dmsp\Listing.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
